@@ -13,15 +13,15 @@ int main() {
 
     // Write your code here!
     int max = 0;
-    for(int cnt = 0; cnt<n; cnt++) {
-        if(cnt == 0) {
-            max = arr[cnt];
+    for(int k = 0; k<n; k++) {
+        if(k == 0) {
+            max = arr[0];
         }
 
         else {
             int num = 0;
             int sub_cnt = 0;
-            for(int i = cnt; i>=sub_cnt; i--) {
+            for(int i = k; i>=sub_cnt; i--) {
                 num = num + arr[i];
                 if(num > max) {
                     max = num;
