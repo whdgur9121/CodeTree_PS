@@ -23,17 +23,15 @@ int main() {
     month[10] = 30;
     month[11] = 31;
 
-    int cnt = 0;
+    int cnt = 1;
 
-    while((m1 != m2) || (d1 != d2)) {
+    while(d1 != d2 || m1 != m2) {
         d1++;
         cnt++;
-        if(d1 > month[m1]) {
+        if(d1 > month[m1-1]) {
             m1++;
             d1 = 1;
-            if(m1 == 12) {
-                m1 = 0;
-            }
+            //배열 index에서 실수가 있었음
         }
     }
 
