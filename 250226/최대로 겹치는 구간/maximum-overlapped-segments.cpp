@@ -19,7 +19,7 @@ int main() {
     }
     for(int i = 0; i < n; i++) {
         int start = x1[i] + 100;
-        int finish = x2[i] + 100;
+        int finish = x2[i] + 99; //끝점은 포함하면 안됨
 
         for(int k = start; k<=finish; k++) {
             arr[k]++;
