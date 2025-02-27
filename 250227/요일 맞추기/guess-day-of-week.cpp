@@ -9,6 +9,7 @@ int main() {
 
     // Please write your code here.
     int arr[13];
+    arr[0] = 0;
     arr[1] = 31;
     arr[2] = 28;
     arr[3] = 31;
@@ -40,12 +41,12 @@ int main() {
 
     int day[7];
     day[0] = date1 % 7;
-    day[1] = date1 % 7 +1;
-    day[2] = date1 % 7 +2;
-    day[3] = date1 % 7 +3;
-    day[4] = date1 % 7 +4;
-    day[5] = date1 % 7 +5;
-    day[6] = date1 % 7 +6;
+    day[1] = (date1 + 1) % 7;
+    day[2] = (date1 + 2) % 7;;
+    day[3] = (date1 + 3) % 7;;
+    day[4] = (date1 + 4) % 7;;
+    day[5] = (date1 + 5) % 7;;
+    day[6] = (date1 + 6) % 7;;
 
     int date2_day = date2 % 7;
     //cout << "date2_day = " << date2_day;
