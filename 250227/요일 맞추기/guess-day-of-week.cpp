@@ -24,23 +24,22 @@ int main() {
     arr[12] = 31;
 
     //날짜로 환산
-    int date1 = 0;
-    for(int i = m1; i >=0; i--) {
+    int date1 = d1;
+    for(int i = 1; i < m1; i++) {
         date1 = date1 + arr[i];
     }
-    date1 = date1 + d1;
     //cout << "date1 : " << date1 << endl;
 
 
-    int date2 = 0;
-    for(int i = m2; i >=0; i--) {
+    int date2 = d2;
+    for(int i = 1; i < m2; i++) {
         date2 = date2 + arr[i];
     }
-    date2 = date2 + d2;
     //cout << "date2 : " << date2 << endl;
 
     int day[7];
     day[0] = date1 % 7;
+    //cout << "date1 : " << day[0] << endl;
     day[1] = (date1 + 1) % 7;
     day[2] = (date1 + 2) % 7;;
     day[3] = (date1 + 3) % 7;;
