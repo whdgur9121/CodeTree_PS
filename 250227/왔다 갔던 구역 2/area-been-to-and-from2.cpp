@@ -22,36 +22,38 @@ int main() {
         arr[i] = 0;
     }
 
+    int index = 1000; //1차 실수(for문 안에 넣어서 계속 초기화)
+
     for(int i = 0; i<n; i++) {
         int start = x[i];
         char direction = dir[i];
         
-        int index = 1000;
 
         if(dir[i] == 'L') {
             for(int k = 0; k<start; k++) {
-                arr[index]++;
                 index--;
+                arr[index]++;
             }
         }
 
         else if(dir[i] == 'R') {
             for(int k = 0; k<start; k++) {
-                arr[index]++;
                 index++;
+                arr[index]++;
             }
         }
+        //cout << "index : " << index - 1000 << endl;
     }
 
-    int max = 0;
-
+    int cal = 0;
+    //2차 실수(문제의 정의를 안 봤음)
     for(int i = 0; i<2001; i++) {
-        if(max < arr[i]) {
-            max = arr[i];
+        if(arr[i] >= 2) {
+            cal++;
         }
     }
     
-    cout << max << endl;
+    cout << cal << endl;
 
     return 0;
 }
