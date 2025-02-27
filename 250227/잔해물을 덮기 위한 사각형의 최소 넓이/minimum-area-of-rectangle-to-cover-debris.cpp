@@ -32,7 +32,7 @@ int main() {
 
     for(int i = first_start_x; i<first_finish_x; i++) {
         for(int k = first_start_y; k<first_finish_y; k++) {
-            arr[i][k]++;
+            arr[i][k] = 1;
         }
     }
 
@@ -58,7 +58,65 @@ int main() {
     //왼쪽 하단에서 위, 우측 하단에서 위로
     //왼쪽 하단에서 좌측으로, 왼쪽 상단에서 좌측으로
 
+    //카운트 형식으로 코드를 측정하니 중간이 뚫리는 경우를 고려하지 못함
+    //for문으로 x좌표, y좌표의 끝과 끝을 확인한다면?
+
+    //헷갈리지 않게 변수 재정의
+    int st_x = first_start_x;
+    int fi_x = first_finish_x;
+    int st_y = first_start_y;
+    int fi_y = first_finish_y;
+
+    //기본적으로 양끝을 먼저 확인 후, 0이면 카운팅
+    //양끝이 1이면 그대로 1로 생각
     int max_x = 0;
+    int max_y = 0;
+
+    for(int i = st_x; i < fi_x; i++) {
+        int cnt_y = 0;
+        if(arr[i][st_y] != 1 && arr[i][fi_y] != 1) {
+            cnt_y = fi_y - st_y;
+            //cout << "Operate" << endl;
+            break;
+        }
+        else {
+            for(int k = st_y; k<fi_y; k++) {
+                if(arr[i][k] == 1) {
+                    cnt_y++;
+                }
+            }
+        }
+        if(max_y < cnt_y) {
+            max_y = cnt_y;
+        }
+    }
+
+    for(int i = st_y; i < fi_y; i++) {
+        int cnt_x = 0;
+        if(arr[st_x][i] != 1 && arr[fi_x][i] != 1) {
+            cnt_x = fi_x - st_x;
+            //cout << "Operate" << endl;
+            break;
+        }
+        else {
+            for(int k = st_x; k<fi_x; k++) {
+                if(arr[k][i] == 1) {
+                    cnt_x++;
+                }
+            }
+        }
+        if(max_x < cnt_x) {
+            max_x = cnt_x;
+        }
+    }
+
+
+    cout << max_x * max_y << endl;
+    return 0;
+}
+
+//중간이 뻥 뚫리는 경우를 고려하지 못하는 코드
+/*int max_x = 0;
     int max_y = 0;
     for(int i = first_start_x; i<first_finish_x; i++) {
         int cnt_y = 0;
@@ -83,8 +141,10 @@ int main() {
         }
     }
 
-    cout << max_x * max_y << endl;
-
-
-    return 0;
-}
+    for(int i = st_x; i<fi_x; i++) {
+        for(int k = st_y; k<fi_y; k++) {
+            cout << arr[i][k];
+        }
+        cout << endl;
+    }
+*/
