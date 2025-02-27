@@ -31,15 +31,15 @@ int main() {
 
         if(dir[i] == 'L') {
             for(int k = 0; k<start; k++) {
-                index--;
                 arr[index]++;
+                index--;
             }
         }
 
         else if(dir[i] == 'R') {
             for(int k = 0; k<start; k++) {
-                index++;
                 arr[index]++;
+                index++;
             }
         }
         //cout << "index : " << index - 1000 << endl;
