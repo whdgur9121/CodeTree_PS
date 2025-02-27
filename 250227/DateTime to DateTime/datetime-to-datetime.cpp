@@ -17,7 +17,7 @@ int main() {
 
     int cnt = 0;
 
-    if(result <= start) {
+    if(result < start) {
         cout << -1 << endl;
         return 0;
     }
