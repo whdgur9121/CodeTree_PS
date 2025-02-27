@@ -22,8 +22,8 @@ int main() {
     }
 
     for(int i = 0; i<N; i++) {
-        int start_x = x[i];
-        int start_y = y[i];
+        int start_x = x[i] + 100; //1차 때 배열을 잘 만들고 범위 조절을 안했음
+        int start_y = y[i] + 100;
 
         for(int k = start_x; k < start_x+8; k++) {
             for(int j = start_y; j < start_y+8; j++) {
