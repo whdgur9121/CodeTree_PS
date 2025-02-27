@@ -74,18 +74,16 @@ int main() {
 
     for(int i = st_x; i < fi_x; i++) {
         int cnt_y = 0;
-        if(arr[i][st_y] != 1 && arr[i][fi_y] != 1) {
-            cnt_y = fi_y - st_y;
-            //cout << "Operate" << endl;
-            break;
-        }
-        else {
-            for(int k = st_y; k<fi_y; k++) {
-                if(arr[i][k] == 1) {
-                    cnt_y++;
-                }
+        for(int k = st_y; k<fi_y; k++) {
+            if(arr[i][st_y] == 1 && arr[i][fi_y-1]==1) {
+                cnt_y = fi_y - st_y;
+                break;
+            }
+            if(arr[i][k] == 1) {
+                cnt_y++;
             }
         }
+        
         if(max_y < cnt_y) {
             max_y = cnt_y;
         }
@@ -93,16 +91,13 @@ int main() {
 
     for(int i = st_y; i < fi_y; i++) {
         int cnt_x = 0;
-        if(arr[st_x][i] != 1 && arr[fi_x][i] != 1) {
-            cnt_x = fi_x - st_x;
-            //cout << "Operate" << endl;
-            break;
-        }
-        else {
-            for(int k = st_x; k<fi_x; k++) {
-                if(arr[k][i] == 1) {
-                    cnt_x++;
-                }
+        for(int k = st_x; k<fi_x; k++) {
+            if(arr[st_x][i] == 1 && arr[fi_x-1][i]==1) {
+                cnt_x = fi_x - st_x;
+                break;
+            }
+            if(arr[k][i] == 1) {
+                cnt_x++;
             }
         }
         if(max_x < cnt_x) {
