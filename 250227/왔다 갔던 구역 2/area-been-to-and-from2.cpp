@@ -30,19 +30,23 @@ int main() {
         
 
         if(dir[i] == 'L') {
-            for(int k = 0; k<start; k++) {
-                arr[index]++;
-                index--;
+            //index--;
+            for(int k = index-start; k<index; k++) {
+                arr[k]++;
+                //cout << "arr : " << index - 1000 << " : " << arr[index] << endl;
             }
+            index = index - start;
         }
 
         else if(dir[i] == 'R') {
-            for(int k = 0; k<start; k++) {
-                arr[index]++;
-                index++;
+            //index++;
+            for(int k = index; k<index + start; k++) {
+                arr[k]++;
+                //cout << "arr : " << index - 1000 << " : " << arr[index] << endl;
             }
+            index = index + start;
         }
-        //cout << "index : " << index - 1000 << endl;
+       //cout << "index : " << index - 1000 << endl;
     }
 
     int cal = 0;
@@ -56,4 +60,7 @@ int main() {
     cout << cal << endl;
 
     return 0;
-}
+}   
+//원래는 k를 0으로 두고 index만큼의 이동을 했으나 오류가 뜸
+//범위의 오류가 존재한 것 같아서 for문에 직접적으로 index를 등장
+//구간의 문제이기 때문에 작거나 큰 부등호만 사용
