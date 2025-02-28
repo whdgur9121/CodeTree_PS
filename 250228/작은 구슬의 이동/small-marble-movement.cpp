@@ -17,13 +17,13 @@ int main() {
     if(d == 'R') {
         dir_num = 0;
     }
-    else if (d == 'U') {
+    else if (d == 'D') {
         dir_num = 1;
     }
     else if(d == 'L') {
         dir_num = 2;
     }
-    else if(d == 'D') {
+    else if(d == 'U') {
         dir_num = 3;
     }
 
@@ -43,7 +43,7 @@ int main() {
     int y = r;
 
     while(t--) {
-        if(x + dx[dir_num] <= 0 || x + dx[dir_num] > n || y + dy[dir_num] <= 0 || y + dy[dir_num] > n ) {
+        if(x + dx[dir_num] == 0 || x + dx[dir_num] > n || y + dy[dir_num] == 0 || y + dy[dir_num] > n ) {
             if (x + dx[dir_num] <= 0) {
                 dir_num = 0;
             }
@@ -51,10 +51,10 @@ int main() {
                 dir_num = 2;
             }
             if(y + dy[dir_num] <= 0) {
-                dir_num = 3;
+                dir_num = 1;
             }
             else if(y + dy[dir_num] > n) {
-                dir_num = 1;
+                dir_num = 3;
             }
         }
         else {
@@ -67,4 +67,7 @@ int main() {
     cout << y << " " << x;
 
     return 0;
-}
+} 
+
+//행렬과 arr 간의 관계를 헷갈렸음
+//U와 D가 반대로 되어 원하는 값이 안나옴
