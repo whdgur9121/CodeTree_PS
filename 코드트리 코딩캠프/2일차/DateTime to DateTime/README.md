@@ -1,8 +1,8 @@
-# [연속 부분 합의 최댓값 구하기 ![Silver1][s1]](https://www.codetree.ai/training-field/search/problems/max-of-partial-sum)
+# [DateTime to DateTime ![Silver5][s5]](https://www.codetree.ai/training-field/search/problems/datetime-to-datetime)
 
 |유형|출처|
 |---|---|
-|[DP](https://www.codetree.ai/training-field/search/?tags=DP)|[일반연습 / 문제은행](https://www.codetree.ai/training-field/home)|
+|[Simulation](https://www.codetree.ai/training-field/search/?tags=Simulation)|[일반연습 / 문제은행](https://www.codetree.ai/training-field/home)|
 
 
 
