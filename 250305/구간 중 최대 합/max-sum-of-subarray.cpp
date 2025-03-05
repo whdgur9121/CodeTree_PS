@@ -20,11 +20,8 @@ int main() {
         for(int k = 0; k<K; k++) {
             cnt = cnt + arr[i - k];
         }
-
-        if(i == 1) {
-            max = cnt;
-        }
-        else if(cnt > max) {
+        
+        if(cnt > max) {
             max = cnt;
         }
     }
