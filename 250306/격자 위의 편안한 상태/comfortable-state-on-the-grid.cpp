@@ -16,7 +16,7 @@ int main() {
     }
 
     // Please write your code here.
-    int arr[N+1][N+1];
+    int arr[N+2][N+2]; //배열이 넘어가는 경우가 있을 수 있음
     for(int i = 0; i<=N; i++) {
         for(int j = 0; j<=N; j++) {
             arr[i][j] = 0;
