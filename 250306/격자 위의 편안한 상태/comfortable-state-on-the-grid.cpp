@@ -43,7 +43,7 @@ int main() {
             y = y - dy[j];
         }
 
-        if(cnt >= 3) {
+        if(cnt == 3) {
             cout << 1 << endl;
         }
         else {
