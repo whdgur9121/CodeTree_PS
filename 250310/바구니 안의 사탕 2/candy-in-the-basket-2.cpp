@@ -34,7 +34,8 @@ int main() {
     */
 
     int max = 0;
-    for(int i = K; i <= N; i++) {
+    for(int i = K; i <= 101-K; i++) {
+        //구간 실수, 실제 counting은 배열의 길이만큼
         int cnt = 0;
         //cout << "Operation" << endl;
         for(int j = i - K; j <= i+K; j++) {
