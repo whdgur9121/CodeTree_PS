@@ -15,8 +15,8 @@ int main() {
     int N, K;
     cin >> N >> K;
 
-    int arr[201];
-    for(int i = 0; i<201; i++) {
+    int arr[501];
+    for(int i = 0; i<501; i++) {
         arr[i] = 0;
     }
 
@@ -35,7 +35,7 @@ int main() {
     */
 
     int max = 0;
-    for(int i = K; i <= 201-K; i++) {
+    for(int i = K; i <= 501-K; i++) {
         //구간 실수, 실제 counting은 배열의 길이만큼
         int cnt = 0;
         //cout << "Operation" << endl;
