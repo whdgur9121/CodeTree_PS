@@ -15,8 +15,8 @@ int main() {
     int N, K;
     cin >> N >> K;
 
-    int arr[101];
-    for(int i = 0; i<101; i++) {
+    int arr[201];
+    for(int i = 0; i<201; i++) {
         arr[i] = 0;
     }
 
@@ -25,7 +25,8 @@ int main() {
 
     for (int i = 0; i < N; i++) {
         cin >> candy >> index;
-        arr[index] = candy;
+        arr[index] = arr[index] + candy;
+        //문제에 같은 위치에 여러개가 놓인다는 말을 기억했어야 함
     }
     /*
     for(int i = 0; i<101; i++) {
@@ -34,7 +35,7 @@ int main() {
     */
 
     int max = 0;
-    for(int i = K; i <= 101-K; i++) {
+    for(int i = K; i <= 201-K; i++) {
         //구간 실수, 실제 counting은 배열의 길이만큼
         int cnt = 0;
         //cout << "Operation" << endl;
