@@ -30,10 +30,7 @@ int main() {
 
         int next_x = x + dx[dir_num];
         int next_y = y + dy[dir_num];
-        if(arr[next_x][next_y] != 0) {
-            dir_num = (dir_num+1) % 4;
-        }
-        if(next_x == n || next_x < 0 || next_y ==m || next_y < 0) {
+        if(next_x == n || next_x < 0 || next_y == m || next_y < 0 || arr[next_x][next_y] != 0) {
             dir_num = (dir_num+1) % 4;
         }
 
