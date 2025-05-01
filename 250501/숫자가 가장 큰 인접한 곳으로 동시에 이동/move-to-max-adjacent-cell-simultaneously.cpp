@@ -57,13 +57,14 @@ int main() {
                 c[j] = -1;
             }
         }
-        //temp가 2 이상인 지점을 0으로 돌려주기
-        for (int q = 0; q < n; q++) {
-            for (int w = 0; w < n; w++) {
-                if(temp[q][w] > 1) {
-                    temp[q][w] = 0;
-                }
+        for(int q = 0; q<n; q++) {
+            for(int k = 0; k<n; k++) {
+                temp[q][k] = 0;
             }
+        }
+        //구슬 위치 기록하기
+        for(int q = 0; q<m; q++) {
+            temp[r[q]][c[q]]++;
         }
         
         //옮겨주기
@@ -88,15 +89,6 @@ int main() {
                 c[j] = y+dy[max_num];
                 temp[r[j]][c[j]]++;
             }
-        }
-        for(int q = 0; q<n; q++) {
-            for(int k = 0; k<n; k++) {
-                temp[q][k] = 0;
-            }
-        }
-        //구슬 위치 기록하기
-        for(int q = 0; q<m; q++) {
-            temp[r[q]][c[q]]++;
         }
     }
 
