@@ -85,9 +85,9 @@ int main() {
             }
         }
         //기록하기
-        for(int q = 0; q<m; i++) {
+        for(int q = 0; q<m; q++) {
         temp[r[q]][c[q]]++;
-    }
+        }
     }
 
     int count = 0;
