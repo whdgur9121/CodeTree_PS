@@ -82,9 +82,12 @@ int main() {
                 }
                 r[j] = x+dx[max_num];
                 c[j] = y+dy[max_num];
-                temp[r[j]][c[j]]++;
             }
         }
+        //기록하기
+        for(int q = 0; q<m; i++) {
+        temp[r[q]][c[q]]++;
+    }
     }
 
     int count = 0;
