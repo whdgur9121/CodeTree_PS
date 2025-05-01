@@ -57,13 +57,14 @@ int main() {
                 c[j] = -1;
             }
         }
-        //temp가 2 이상인 지점을 0으로 돌려주기
-        for (int q = 0; q < n; q++) {
-            for (int w = 0; w < n; w++) {
-                if(temp[q][w] > 1) {
-                    temp[q][w] = 0;
-                }
+        for(int i = 0; i<n; i++) {
+            for(int k = 0; k<n; k++) {
+                temp[i][k] = 0;
             }
+        }
+        //구슬 위치 기록하기
+        for(int i = 0; i<m; i++) {
+            temp[r[i]][c[i]]++;
         }
         
         //옮겨주기
