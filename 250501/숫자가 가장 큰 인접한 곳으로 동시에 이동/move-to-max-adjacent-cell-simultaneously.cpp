@@ -86,7 +86,9 @@ int main() {
         }
         //기록하기
         for(int q = 0; q<m; q++) {
-        temp[r[q]][c[q]]++;
+            if(r[q] < 0 || c[q] < 0) {}
+            //좌표가 음수가 아닐 경우
+            else temp[r[q]][c[q]]++; {}
         }
     }
 
