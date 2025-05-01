@@ -62,10 +62,6 @@ int main() {
                 temp[q][k] = 0;
             }
         }
-        //구슬 위치 기록하기
-        for(int q = 0; q<m; q++) {
-            temp[r[q]][c[q]]++;
-        }
         
         //옮겨주기
         for(int j = 0; j<m; j++) {
@@ -84,7 +80,6 @@ int main() {
                         max_num = dir;
                     }
                 }
-                temp[x][y]--;
                 r[j] = x+dx[max_num];
                 c[j] = y+dy[max_num];
                 temp[r[j]][c[j]]++;
