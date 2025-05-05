@@ -16,9 +16,20 @@ void recursion(int depth) {
         for(int i = 0; i<2; i++) {
             count[i] = 0;
         }//꼭 초기화 해주기
+
+        int trace = 0;
+        for(int k = 0; k<2*n; k++) {
+            if(arr[k] == 1) {
+                trace++;
+            }
+        }
+        if(trace != n) {
+            return;
+        }
         for(int i = 0 ;i<2*n; i++) {
             count[arr[i]] = count[arr[i]] + num[i];
         }
+        
         if(count[0] > count[1]) {
             in_min = count[0] - count[1];
         }
