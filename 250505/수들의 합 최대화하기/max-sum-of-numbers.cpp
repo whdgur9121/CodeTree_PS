@@ -4,35 +4,32 @@ using namespace std;
 
 int n;
 int grid[10][10];
-int choice[10];
-int Max = 0;
+bool visit[10];
+int Max;
 
-void recursion(int depth) {
+int cal_Max(int num1, int num2) {
+    if(num1 > num2) {
+        return num1;
+    }
+    else {
+        return num2;
+    }
+}
+
+void recursion(int depth, int current_num) {
     if(depth == n) {
-        int trace[n];
-        int in_max = 0;
-        for(int i = 0; i<n; i++) {
-            trace[i] = 0;
-        }
-        for(int i = 0; i<n; i++) {
-            trace[choice[i]]++;
-            if(trace[choice[i]] >= 2) {
-                return;
-            }
-        }
-        for(int i = 0; i<n; i++) {
-            in_max = grid[i][choice[i]] + in_max;
-        }
-        if(Max < in_max) {
-            Max = in_max;
-        }
- 
+        Max = cal_Max(Max, current_num);
         return;
     }
 
     for(int i = 0; i<n; i++) {
-        choice[depth] = i;
-        recursion(depth+1);
+        if(visit[i]) {
+            continue;
+        }
+
+        visit[i] = true;
+        recursion(depth+1, current_num + grid[depth][i]);
+        visit[i] = false;
     }
 
 
@@ -48,7 +45,7 @@ int main() {
     }
 
     // Please write your code here.
-    recursion(0);
+    recursion(0, 0);
     cout << Max;
 
     return 0;
