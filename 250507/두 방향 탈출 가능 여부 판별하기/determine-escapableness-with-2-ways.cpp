@@ -4,10 +4,15 @@ using namespace std;
 
 int n, m;
 int grid[100][100];
+bool visit[100][100];
 
 int success = 0;
 
 void DFS(int x, int y, int size) {
+    if(visit[x][y] == true) {
+        return;
+    }
+    visit[x][y] = true;
     if(x == size-1 && y == size-1) {
         success = 1;
         return;
