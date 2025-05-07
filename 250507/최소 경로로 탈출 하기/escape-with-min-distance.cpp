@@ -39,7 +39,7 @@ int main() {
 
         if(x == n-1 && y == m-1) {
             cout << Dist[x][y];
-            break;
+            return 0;
         }
 
         for(int i = 0; i<4; i++) {
@@ -57,6 +57,8 @@ int main() {
             q.push({nx, ny});
         }
     }
+
+    cout << -1;
 
     return 0;
 }
