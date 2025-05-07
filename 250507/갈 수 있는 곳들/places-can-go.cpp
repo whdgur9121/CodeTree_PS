@@ -30,10 +30,13 @@ int main() {
         int x = r[i];
         int y = c[i];
 
-        if(visit[x][y] || grid[x][y] == 1) {
+        if(visit[x][y]) {
             continue;
         }
-        count++; //시작점이 이미 방문한 경우
+
+        if(grid[x][y] == 0) {
+            count++;
+        }
 
         int dx[4] = {1, 0, -1, 0};
         int dy[4] = {0, 1, 0, -1};
