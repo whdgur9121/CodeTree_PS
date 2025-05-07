@@ -27,8 +27,8 @@ int main() {
     //각 경우에 대해서 BFS 수행하면 됨(재귀보단 queue가 쉬운 느낌)
 
     for(int i = 0; i<k; i++) {
-        int x = r[i];
-        int y = c[i];
+        int x = r[i]-1;
+        int y = c[i]-1;
 
         if(visit[x][y]) {
             continue;
@@ -52,14 +52,12 @@ int main() {
             for(int j = 0; j<4; j++) {
                 int nx = x + dx[j];
                 int ny = y + dy[j];
-
                 if(nx>n-1 || nx < 0 || ny > n-1 || ny < 0 || grid[nx][ny] == 1) {
                     continue;
                 }
                 if(visit[nx][ny]) {
                     continue;
                 }
-
                 visit[nx][ny] = true;
                 count++;
                 q.push({nx, ny});
