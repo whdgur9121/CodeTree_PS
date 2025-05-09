@@ -4,22 +4,27 @@ using namespace std;
 
 int N;
 
-int sum = 0;
+int memo[46];
 
-int fibonachi(int a) {
-    if(a <= 1) {
-        return a;
-    }
-    sum = fibonachi(a-1) + fibonachi(a-2);
 
-    return sum;
-}
 
 int main() {
     cin >> N;
+    for(int i = 0; i<46; i++) {
+        memo[i] = 0;
+    }
+
+    memo[1] = 1;
+    memo[2] = 1;
+
+    for(int i = 3; i<=N; i++) {
+        memo[i] = memo[i-1] + memo[i-2];
+    }
+
+    cout << memo[N];
+   
 
     // Please write your code here.
-    cout << fibonachi(N);
 
     return 0;
 }
