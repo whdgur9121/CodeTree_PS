@@ -1,42 +1,39 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
+#include <bits/stdc++.h>
 using namespace std;
 
+const int MAXN = 1005;
 int n;
-int coin[1001];
-int dp[1001][3];
+int coin[MAXN];
+int dp[MAXN][5];
 
 int main() {
+    // 계단의 층 수를 입력받습니다.
     cin >> n;
-    for (int i = 1; i <= n; i++) {
+    // 각 층의 동전의 개수를 입력받습니다.
+    for(int i = 1; i <= n; i++)
         cin >> coin[i];
+    
+    // 기본 케이스를 초기화합니다.
+    dp[1][1] = coin[1];
+
+    dp[2][0] = coin[2];
+    dp[2][2] = coin[1] + coin[2];
+
+    // 동적 프로그래밍을 사용하여 최대 가치를 계산합니다.
+    // dp[i][j] : i번 위치에 도착했을 때, 정확히 j번 1계단 올랐을 때의 최대 가치
+    for(int i = 3; i <= n; i++) {
+        for(int j = 0; j <= 3; j++) {
+            if (dp[i - 2][j] != 0)
+                dp[i][j] = max(dp[i][j], dp[i - 2][j] + coin[i]);
+            if(j && dp[i - 1][j - 1] != 0)
+                dp[i][j] = max(dp[i][j], dp[i - 1][j - 1] + coin[i]);
+        }
     }
 
-    // 초기 조건 설정
-    for (int i = 0; i <= n; ++i) {
-        dp[i][0] = dp[i][1] = dp[i][2] = -1e9; // 음의 무한대로 초기화
-    }
-
-    dp[0][0] = 0;
-    if (n >= 1) {
-        dp[1][1] = coin[1];
-    }
-    if (n >= 2) {
-        dp[2][0] = coin[2];
-        dp[2][2] = coin[1] + coin[2];
-    }
-
-    // DP 테이블 채우기
-    for (int i = 3; i <= n; i++) {
-        dp[i][0] = max({dp[i - 2][0], dp[i - 2][1], dp[i - 2][2]}) + coin[i];
-        dp[i][1] = dp[i - 1][0] + coin[i];
-        dp[i][2] = dp[i - 1][1] + coin[i];
-    }
-
-    // 최종 결과는 n층에 도달했을 때의 최대 동전 개수
-    cout << max({dp[n][0], dp[n][1], dp[n][2]}) << endl;
-
-    return 0;
+    // 가능한 모든 경우에서 최대 가치를 찾아 출력합니다.
+    int ans = 0;
+    for(int j = 0; j <= 3; j++)
+        ans = max(ans, dp[n][j]);
+    
+    cout << ans;
 }
