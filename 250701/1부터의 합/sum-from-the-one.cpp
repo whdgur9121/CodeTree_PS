@@ -6,9 +6,9 @@ int main() {
     int n;
     cin >> n;
 
-    int cnt = 1;
+    int cnt = 0;
     int num = 0;
-    for(int i = 2; i<=100; i++) {
+    for(int i = 1; i<=100; i++) {
         cnt = cnt + i;
         if(cnt >= n) {
             num = i;
