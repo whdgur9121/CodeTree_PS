@@ -7,7 +7,7 @@ int main() {
 
     cout << fixed;
     cout.precision(2);
-    
+
     double cnt = 0;
     double num = 0;
 
@@ -15,7 +15,7 @@ int main() {
         int age = 0;
         cin >> age;
 
-        if(age > 29) {
+        if(age > 29 || age< 20) {
             cout << num/cnt << endl;
             break;
         }
