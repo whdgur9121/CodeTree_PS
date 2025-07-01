@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Please write your code here.
+    int n;
+    cin >> n;
+
+    int cnt = 1;
+    int num = 0;
+    for(int i = 2; i<=100; i++) {
+        cnt = cnt + i;
+        if(cnt >= n) {
+            num = i;
+            break;
+        }
+    }
+    cout << num << endl;
+    return 0;
+}
