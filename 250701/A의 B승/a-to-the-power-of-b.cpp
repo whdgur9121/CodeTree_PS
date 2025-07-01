@@ -8,6 +8,11 @@ int main() {
 
     int mul = a;
 
+    if(b == 0) {
+        cout << 1 << endl;
+        return 0;
+    }
+
     for(int i = 1; i<b; i++) {
         a = a * mul;
     }
