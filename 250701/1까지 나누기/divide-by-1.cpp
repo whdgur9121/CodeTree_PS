@@ -12,7 +12,7 @@ int main() {
     for(int i = 1; i<5000; i++) {
         num = num / i;
         cnt++;
-        if(num <= 0) {
+        if(num <= 1) {
             break;
         }    
     }
